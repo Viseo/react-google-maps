@@ -38,6 +38,10 @@ export class Marker extends React.PureComponent {
      * @see https://github.com/mikesaidani/marker-clusterer-plus
      */
     noRedraw: PropTypes.bool,
+    /**
+     * Custom data to pass to the marker.
+     */
+    customData: PropTypes.any,
   }
 
   static contextTypes = {
@@ -54,7 +58,7 @@ export class Marker extends React.PureComponent {
    */
   constructor(props, context) {
     super(props, context)
-    const marker = new google.maps.Marker()
+    const marker = new google.maps.Marker({ customData: this.props.customData })
     construct(Marker.propTypes, updaterMap, this.props, marker)
     const markerClusterer = this.context[MARKER_CLUSTERER]
     if (markerClusterer) {

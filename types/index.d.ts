@@ -396,6 +396,9 @@ declare module 'react-google-maps/lib/components/Marker' {
         onVisibleChanged?(): void
         onZindexChanged?(): void
 
+        // custom data
+        customData: any;
+
         // MarkerClustererPlus
         noRedraw?: boolean
 
