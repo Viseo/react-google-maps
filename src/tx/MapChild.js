@@ -1,4 +1,5 @@
 import path from "path"
+import process from "process"
 import { execSync } from "child_process"
 import _ from "lodash"
 
@@ -38,9 +39,12 @@ export default function transformer(file, api) {
       .get().node.id.name
 
   const result = execSync(
-    `./node_modules/.bin/babel-node ${path.resolve(
-      __dirname,
-      `./ClassDefinition.js`
+    `${path.relative(
+      process.cwd(),
+      "node_modules/.bin/babel-node"
+    )} ${path.relative(
+      process.cwd(),
+      "src/tx/ClassDefinition.js"
     )} "${KlassName}"`,
     {
       encoding: "utf-8",

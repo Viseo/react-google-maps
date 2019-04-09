@@ -3,6 +3,7 @@
 ### Editor
 *.swp
 .idea
+.vscode
 
 ### Node ###
 # Logs
