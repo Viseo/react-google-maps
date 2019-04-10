@@ -31,6 +31,11 @@ export class Marker extends React.PureComponent {
     noRedraw: PropTypes.bool,
 
     /**
+     * Custom data to pass to the marker.
+     */
+    customData: PropTypes.any,
+
+    /**
      * @type Animation
      */
     defaultAnimation: PropTypes.any,
@@ -69,11 +74,6 @@ export class Marker extends React.PureComponent {
      * @type MarkerOptions
      */
     defaultOptions: PropTypes.any,
-
-    /**
-     * @type MarkerPlace
-     */
-    defaultPlace: PropTypes.any,
 
     /**
      * @type LatLng|LatLngLiteral
@@ -139,11 +139,6 @@ export class Marker extends React.PureComponent {
      * @type MarkerOptions
      */
     options: PropTypes.any,
-
-    /**
-     * @type MarkerPlace
-     */
-    place: PropTypes.any,
 
     /**
      * @type LatLng|LatLngLiteral
@@ -290,8 +285,13 @@ export class Marker extends React.PureComponent {
    */
   constructor(props, context) {
     super(props, context)
-    const marker = new google.maps.Marker()
+
+    const { customData } = this.props
+    const ctorArg = (customData != null && { customData }) || {}
+
+    const marker = new google.maps.Marker(ctorArg)
     construct(Marker.propTypes, updaterMap, this.props, marker)
+
     const markerClusterer = this.context[MARKER_CLUSTERER]
     if (markerClusterer) {
       markerClusterer.addMarker(marker, !!this.props.noRedraw)
@@ -405,15 +405,6 @@ export class Marker extends React.PureComponent {
 
   /**
    *
-   * @type MarkerPlace
-   * @public
-   */
-  getPlace() {
-    return this.state[MARKER].getPlace()
-  }
-
-  /**
-   *
    * @type LatLng
    * @public
    */
@@ -515,10 +506,6 @@ const updaterMap = {
 
   options(instance, options) {
     instance.setOptions(options)
-  },
-
-  place(instance, place) {
-    instance.setPlace(place)
   },
 
   position(instance, position) {
