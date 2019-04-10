@@ -456,7 +456,7 @@ declare module 'react-google-maps/lib/components/Marker' {
     onZindexChanged?(): void
 
     // custom data
-    customData: T
+    customData?: T
 
     // MarkerClustererPlus
     noRedraw?: boolean
