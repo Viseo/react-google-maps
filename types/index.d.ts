@@ -144,6 +144,7 @@ declare module 'react-google-maps/lib/components/addons/MarkerClusterer' {
     calculator?: Calculator
     clusterClass?: string
     enableRetinaIcons?: boolean
+    fitMarkers?: boolean
     gridSize?: number
     ignoreHidden?: boolean
     imageExtension?: string
@@ -305,7 +306,6 @@ declare module 'react-google-maps/lib/components/GoogleMap' {
     onMouseOut?(e: google.maps.MouseEvent): void
     onMouseOver?(e: google.maps.MouseEvent): void
     onProjectionChanged?(): void
-    onResize?(): void
     onRightClick?(e: google.maps.MouseEvent): void
     onTilesLoaded?(): void
     onTiltChanged?(): void
@@ -314,12 +314,14 @@ declare module 'react-google-maps/lib/components/GoogleMap' {
 
   export default class GoogleMap extends Component<GoogleMapProps> {
     fitBounds(
-      bounds: google.maps.LatLngBounds | google.maps.LatLngBoundsLiteral
+      bounds: google.maps.LatLngBounds | google.maps.LatLngBoundsLiteral,
+      padding?: number | google.maps.Padding
     ): void
     panBy(x: number, y: number): void
     panTo(latLng: google.maps.LatLng | google.maps.LatLngLiteral): void
     panToBounds(
-      latLngBounds: google.maps.LatLngBounds | google.maps.LatLngBoundsLiteral
+      latLngBounds: google.maps.LatLngBounds | google.maps.LatLngBoundsLiteral,
+      padding?: number | google.maps.Padding
     ): void
     getBounds(): google.maps.LatLngBounds
     getCenter(): google.maps.LatLng
@@ -411,7 +413,6 @@ declare module 'react-google-maps/lib/components/Marker' {
     defaultLabel?: google.maps.MarkerLabel
     defaultOpacity?: number
     defaultOptions?: google.maps.MarkerOptions
-    defaultPlace?: google.maps.Place
     defaultPosition?: google.maps.LatLng | google.maps.LatLngLiteral
     defaultShape?: google.maps.MarkerShape
     defaultTitle?: string
@@ -426,7 +427,6 @@ declare module 'react-google-maps/lib/components/Marker' {
     label?: google.maps.MarkerLabel
     opacity?: number
     options?: google.maps.MarkerOptions
-    place?: google.maps.Place
     position?: google.maps.LatLng | google.maps.LatLngLiteral
     shape?: google.maps.MarkerShape
     title?: string
@@ -479,7 +479,6 @@ declare module 'react-google-maps/lib/components/Marker' {
     getIcon(): string | google.maps.Icon | google.maps.Symbol
     getLabel(): google.maps.MarkerLabel
     getOpacity(): number
-    getPlace(): google.maps.Place
     getPosition(): google.maps.LatLng
     getShape(): google.maps.MarkerShape
     getTitle(): string

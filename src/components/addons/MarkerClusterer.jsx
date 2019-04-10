@@ -1,3 +1,4 @@
+/* global google */
 import React from "react"
 import PropTypes from "prop-types"
 import MarkerClustererPlus from "marker-clusterer-plus"
@@ -129,6 +130,11 @@ export class MarkerClusterer extends React.PureComponent {
     enableRetinaIcons: PropTypes.bool,
 
     /**
+     * @type boolean
+     */
+    fitMarkers: PropTypes.bool,
+
+    /**
      * @type number
      */
     gridSize: PropTypes.number,
@@ -241,6 +247,10 @@ export class MarkerClusterer extends React.PureComponent {
 
   componentDidMount() {
     componentDidMount(this, this.state[MARKER_CLUSTERER], eventMap)
+
+    if (this.props.fitMarkers) {
+      this.fitToMarkers()
+    }
   }
 
   componentDidUpdate(prevProps) {
@@ -252,6 +262,15 @@ export class MarkerClusterer extends React.PureComponent {
       prevProps
     )
     this.state[MARKER_CLUSTERER].repaint()
+
+    const { fitMarkers, children } = this.props
+    const { fitMarkers: prevFitMarkers, children: prevChildren } = prevProps
+
+    if (fitMarkers) {
+      if (prevFitMarkers !== fitMarkers || children !== prevChildren) {
+        this.fitToMarkers()
+      }
+    }
   }
 
   componentWillUnmount() {
@@ -265,6 +284,22 @@ export class MarkerClusterer extends React.PureComponent {
   render() {
     const { children } = this.props
     return <div>{children}</div>
+  }
+
+  fitToMarkers() {
+    const clusterer = this.state[MARKER_CLUSTERER]
+    const map = this.context[MAP]
+
+    const markers = clusterer.getMarkers()
+    if (!markers.length) {
+      return
+    }
+
+    const bounds = new google.maps.LatLngBounds()
+    markers.forEach(m => bounds.extend(m.getPosition()))
+
+    map.fitBounds(bounds)
+    map.panToBounds(bounds)
   }
 }
 
