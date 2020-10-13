@@ -62,7 +62,7 @@
     "precommit:src": "npm run build:src && npm run dtslint",
     "commit:src": "git add -A && git commit -m \"chore(src/components): compile from src/macros with `babel`\"",
     "prebuild:lib": "rimraf lib",
-    "build:lib": "cross-env NODE_ENV=production babel src --out-dir lib --ignore macros,tx,spec.js",
+    "build:lib": "cross-env NODE_ENV=production babel src --out-dir lib --ignore 'src/macros','src/tx','**/__tests__','**/*.spec.js'",
     "precommit:lib": "npm run build:lib",
     "commit:lib": "git add -A && git commit -m \"chore(lib): compile from src with `babel`\"",
     "precommit:docs": "npm run styleguide:build",
@@ -78,21 +78,20 @@
   },
   "babel": {
     "plugins": [
-      "lodash",
-      "transform-class-properties",
-      "transform-object-rest-spread",
-      "transform-runtime"
+      ["@babel/plugin-proposal-class-properties", { "loose": true }],
+      "@babel/plugin-transform-runtime",
+      "@babel/plugin-transform-spread"
     ],
     "presets": [
       [
-        "env",
+        "@babel/preset-env",
         {
           "targets": {
             "ie": 9
           }
         }
       ],
-      "react"
+      "@babel/preset-react"
     ],
     "env": {
       "debug": {
@@ -102,13 +101,14 @@
     }
   },
   "prettier": {
-    "semi": false,
-    "singleQuote": false,
+    "semi": true,
+    "singleQuote": true,
     "trailingComma": "es5"
   },
   "types": "types",
   "dependencies": {
-    "babel-runtime": "^6.26.0",
+    "@babel/core": "7.11.6",
+    "@babel/node": "7.10.5",
     "can-use-dom": "^0.1.0",
     "google-maps-infobox": "^2.0.0",
     "invariant": "^2.2.4",
@@ -131,13 +131,12 @@
     "@types/googlemaps": "^3.40.0",
     "@types/markerclustererplus": "^2.1.33",
     "@types/react": "^16.9.52",
-    "babel-cli": "^6.26.0",
-    "babel-plugin-lodash": "^3.3.4",
-    "babel-plugin-transform-class-properties": "^6.24.1",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1",
+    "@babel/cli": "7.11.6",
+    "@babel/preset-env": "7.11.5",
+    "@babel/preset-react": "7.10.4",
+    "@babel/plugin-proposal-class-properties": "7.10.4",
+    "@babel/plugin-transform-runtime": "7.11.5",
+    "@babel/plugin-transform-spread": "7.11.0",
     "cheerio": "1.0.0-rc.3",
     "cross-env": "^7.0.2",
     "dtslint": "^4.0.4",
