@@ -7,21 +7,20 @@ const fetch = makeFetchHappen.defaults({
 })
 
 const KlassName = process.argv[2]
+const baseUrl = "https://developers.google.com"
 
 const fetchAndLoad = url =>
   fetch(url)
     .then(response => response.text())
     .then(html => cheerio.load(html))
 
-fetchAndLoad(
-  "https://developers.google.com/maps/documentation/javascript/reference/"
-)
+fetchAndLoad(`${baseUrl}/maps/documentation/javascript/reference/`)
   .then($ =>
     $(`#${KlassName}`)
       .find("a")
       .attr("href")
   )
-  .then(classUrl => fetchAndLoad(classUrl))
+  .then(classUrl => fetchAndLoad(`${baseUrl}${classUrl}`))
   .then($ => {
     const $content = $(`#${KlassName}`).parent()
     return contentToJS(KlassName, $, $content)
