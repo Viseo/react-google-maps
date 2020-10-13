@@ -5,7 +5,7 @@
  * -----------------------------------------------------------------------------
  */
 /* global google */
-import React from "react"
+import React from "react";
 import PropTypes from "prop-types"
 
 import {
@@ -147,7 +147,7 @@ export class Circle extends React.PureComponent {
     /**
      * function
      */
-    onRadiusChanged: PropTypes.func,
+    onRadiusChanged: PropTypes.func
   }
 
   static contextTypes = {
@@ -196,55 +196,55 @@ export class Circle extends React.PureComponent {
   /**
    * Gets the `LatLngBounds` of this Circle.
    * @type LatLngBounds
-   * @public
+   * @public 
    */
   getBounds() {
-    return this.state[CIRCLE].getBounds()
+    return this.state[CIRCLE].getBounds();
   }
 
   /**
    * Returns the center of this circle.
    * @type LatLng
-   * @public
+   * @public 
    */
   getCenter() {
-    return this.state[CIRCLE].getCenter()
+    return this.state[CIRCLE].getCenter();
   }
 
   /**
    * Returns whether this circle can be dragged by the user.
    * @type boolean
-   * @public
+   * @public 
    */
   getDraggable() {
-    return this.state[CIRCLE].getDraggable()
+    return this.state[CIRCLE].getDraggable();
   }
 
   /**
    * Returns whether this circle can be edited by the user.
    * @type boolean
-   * @public
+   * @public 
    */
   getEditable() {
-    return this.state[CIRCLE].getEditable()
+    return this.state[CIRCLE].getEditable();
   }
 
   /**
    * Returns the radius of this circle (in meters).
    * @type number
-   * @public
+   * @public 
    */
   getRadius() {
-    return this.state[CIRCLE].getRadius()
+    return this.state[CIRCLE].getRadius();
   }
 
   /**
    * Returns whether this circle is visible on the map.
    * @type boolean
-   * @public
+   * @public 
    */
   getVisible() {
-    return this.state[CIRCLE].getVisible()
+    return this.state[CIRCLE].getVisible();
   }
 }
 
@@ -263,31 +263,31 @@ const eventMap = {
   onCenterChanged: "center_changed",
   onClick: "click",
   onDrag: "drag",
-  onRadiusChanged: "radius_changed",
+  onRadiusChanged: "radius_changed"
 }
 
 const updaterMap = {
   center(instance, center) {
-    instance.setCenter(center)
+    instance.setCenter(center);
   },
 
   draggable(instance, draggable) {
-    instance.setDraggable(draggable)
+    instance.setDraggable(draggable);
   },
 
   editable(instance, editable) {
-    instance.setEditable(editable)
+    instance.setEditable(editable);
   },
 
   options(instance, options) {
-    instance.setOptions(options)
+    instance.setOptions(options);
   },
 
   radius(instance, radius) {
-    instance.setRadius(radius)
+    instance.setRadius(radius);
   },
 
   visible(instance, visible) {
-    instance.setVisible(visible)
-  },
+    instance.setVisible(visible);
+  }
 }

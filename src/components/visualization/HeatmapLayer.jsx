@@ -5,7 +5,7 @@
  * -----------------------------------------------------------------------------
  */
 /* global google */
-import invariant from "invariant"
+import invariant from "invariant";
 import React from "react"
 import PropTypes from "prop-types"
 
@@ -43,7 +43,7 @@ export class HeatmapLayer extends React.PureComponent {
     /**
      * @type HeatmapLayerOptions
      */
-    options: PropTypes.any,
+    options: PropTypes.any
   }
 
   static contextTypes = {
@@ -96,10 +96,10 @@ export class HeatmapLayer extends React.PureComponent {
   /**
    * Returns the data points currently displayed by this heatmap.
    * @type MVCArray<LatLng|WeightedLocation>
-   * @public
+   * @public 
    */
   getData() {
-    return this.state[HEATMAP_LAYER].getData()
+    return this.state[HEATMAP_LAYER].getData();
   }
 }
 
@@ -109,10 +109,10 @@ const eventMap = {}
 
 const updaterMap = {
   data(instance, data) {
-    instance.setData(data)
+    instance.setData(data);
   },
 
   options(instance, options) {
-    instance.setOptions(options)
-  },
+    instance.setOptions(options);
+  }
 }

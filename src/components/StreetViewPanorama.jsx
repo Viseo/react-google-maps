@@ -4,7 +4,7 @@
  * Please **DO NOT** edit this file directly when creating PRs.
  * -----------------------------------------------------------------------------
  */
-import invariant from "invariant"
+import invariant from "invariant";
 import React from "react"
 import PropTypes from "prop-types"
 
@@ -142,7 +142,7 @@ export class StreetViewPanorama extends React.PureComponent {
     /**
      * function
      */
-    onZoomChanged: PropTypes.func,
+    onZoomChanged: PropTypes.func
   }
 
   static contextTypes = {
@@ -203,91 +203,91 @@ export class StreetViewPanorama extends React.PureComponent {
   /**
    * Returns the set of navigation links for the Street View panorama.
    * @type Array<StreetViewLink>
-   * @public
+   * @public 
    */
   getLinks() {
-    return this.context[MAP].getLinks()
+    return this.context[MAP].getLinks();
   }
 
   /**
    * Returns the StreetViewLocation of the current panorama.
    * @type StreetViewLocation
-   * @public
+   * @public 
    */
   getLocation() {
-    return this.context[MAP].getLocation()
+    return this.context[MAP].getLocation();
   }
 
   /**
    * Returns the state of motion tracker. If true when the user physically moves the device and the browser supports it, the Street View Panorama tracks the physical movements.
    * @type boolean
-   * @public
+   * @public 
    */
   getMotionTracking() {
-    return this.context[MAP].getMotionTracking()
+    return this.context[MAP].getMotionTracking();
   }
 
   /**
    * Returns the current panorama ID for the Street View panorama. This id is stable within the browser's current session only.
    * @type string
-   * @public
+   * @public 
    */
   getPano() {
-    return this.context[MAP].getPano()
+    return this.context[MAP].getPano();
   }
 
   /**
    * Returns the heading and pitch of the photographer when this panorama was taken. For Street View panoramas on the road, this also reveals in which direction the car was travelling. This data is available after the `pano_changed` event.
    * @type StreetViewPov
-   * @public
+   * @public 
    */
   getPhotographerPov() {
-    return this.context[MAP].getPhotographerPov()
+    return this.context[MAP].getPhotographerPov();
   }
 
   /**
    * Returns the current `LatLng` position for the Street View panorama.
    * @type LatLng
-   * @public
+   * @public 
    */
   getPosition() {
-    return this.context[MAP].getPosition()
+    return this.context[MAP].getPosition();
   }
 
   /**
    * Returns the current point of view for the Street View panorama.
    * @type StreetViewPov
-   * @public
+   * @public 
    */
   getPov() {
-    return this.context[MAP].getPov()
+    return this.context[MAP].getPov();
   }
 
   /**
    * Returns the status of the panorama on completion of the `setPosition()` or `setPano()` request.
    * @type StreetViewStatus
-   * @public
+   * @public 
    */
   getStatus() {
-    return this.context[MAP].getStatus()
+    return this.context[MAP].getStatus();
   }
 
   /**
    * Returns `true` if the panorama is visible. It does not specify whether Street View imagery is available at the specified position.
    * @type boolean
-   * @public
+   * @public 
    */
   getVisible() {
-    return this.context[MAP].getVisible()
+    return this.context[MAP].getVisible();
   }
 
   /**
    * Returns the zoom level of the panorama. Fully zoomed-out is level 0, where the field of view is 180 degrees. Zooming in increases the zoom level.
    * @type number
-   * @public
+   * @public 
    */
   getZoom() {
-    return this.context[MAP].getZoom()
+    return this.context[MAP].getZoom();
   }
 }
 
@@ -301,39 +301,39 @@ const eventMap = {
   onResize: "resize",
   onStatusChanged: "status_changed",
   onVisibleChanged: "visible_changed",
-  onZoomChanged: "zoom_changed",
+  onZoomChanged: "zoom_changed"
 }
 
 const updaterMap = {
   links(instance, links) {
-    instance.setLinks(links)
+    instance.setLinks(links);
   },
 
   motionTracking(instance, motionTracking) {
-    instance.setMotionTracking(motionTracking)
+    instance.setMotionTracking(motionTracking);
   },
 
   options(instance, options) {
-    instance.setOptions(options)
+    instance.setOptions(options);
   },
 
   pano(instance, pano) {
-    instance.setPano(pano)
+    instance.setPano(pano);
   },
 
   position(instance, position) {
-    instance.setPosition(position)
+    instance.setPosition(position);
   },
 
   pov(instance, pov) {
-    instance.setPov(pov)
+    instance.setPov(pov);
   },
 
   visible(instance, visible) {
-    instance.setVisible(visible)
+    instance.setVisible(visible);
   },
 
   zoom(instance, zoom) {
-    instance.setZoom(zoom)
-  },
+    instance.setZoom(zoom);
+  }
 }

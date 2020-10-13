@@ -5,7 +5,7 @@
  * -----------------------------------------------------------------------------
  */
 /* global google */
-import _ from "lodash"
+import _ from "lodash";
 import invariant from "invariant"
 import canUseDOM from "can-use-dom"
 import React from "react"
@@ -49,7 +49,7 @@ export class SearchBox extends React.PureComponent {
     /**
      * function
      */
-    onPlacesChanged: PropTypes.func,
+    onPlacesChanged: PropTypes.func
   }
 
   static contextTypes = {
@@ -124,7 +124,7 @@ export class SearchBox extends React.PureComponent {
      * @see https://developers.google.com/maps/documentation/javascript/3.exp/reference#SearchBox
      */
     const searchBox = new google.maps.places.SearchBox(
-      this.containerElement.querySelector("input")
+      this.containerElement.querySelector('input')
     )
     construct(SearchBox.propTypes, updaterMap, this.props, searchBox)
     this.setState({
@@ -159,7 +159,7 @@ export class SearchBox extends React.PureComponent {
       const child = this.context[MAP].controls[
         this.props.controlPosition
       ].removeAt(this.mountControlIndex)
-      if (child !== undefined) {
+      if(child !== undefined){
         this.containerElement.appendChild(child)
       }
     }
@@ -178,19 +178,19 @@ export class SearchBox extends React.PureComponent {
   /**
    * Returns the bounds to which query predictions are biased.
    * @type LatLngBounds
-   * @public
+   * @public 
    */
   getBounds() {
-    return this.state[SEARCH_BOX].getBounds()
+    return this.state[SEARCH_BOX].getBounds();
   }
 
   /**
    * Returns the query selected by the user, or `null` if no places have been found yet, to be used with `places_changed` event.
    * @type Array<PlaceResult>
-   * @public
+   * @public 
    */
   getPlaces() {
-    return this.state[SEARCH_BOX].getPlaces()
+    return this.state[SEARCH_BOX].getPlaces();
   }
 }
 
@@ -199,11 +199,11 @@ export default SearchBox
 const isValidControlPosition = _.isNumber
 
 const eventMap = {
-  onPlacesChanged: "places_changed",
+  onPlacesChanged: "places_changed"
 }
 
 const updaterMap = {
   bounds(instance, bounds) {
-    instance.setBounds(bounds)
-  },
+    instance.setBounds(bounds);
+  }
 }

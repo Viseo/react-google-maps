@@ -5,7 +5,7 @@
  * -----------------------------------------------------------------------------
  */
 /* global google */
-import React from "react"
+import React from "react";
 import PropTypes from "prop-types"
 
 import {
@@ -67,7 +67,7 @@ export class DirectionsRenderer extends React.PureComponent {
     /**
      * function
      */
-    onDirectionsChanged: PropTypes.func,
+    onDirectionsChanged: PropTypes.func
   }
 
   static contextTypes = {
@@ -121,51 +121,51 @@ export class DirectionsRenderer extends React.PureComponent {
   /**
    * Returns the renderer's current set of directions.
    * @type DirectionsResult
-   * @public
+   * @public 
    */
   getDirections() {
-    return this.state[DIRECTIONS_RENDERER].getDirections()
+    return this.state[DIRECTIONS_RENDERER].getDirections();
   }
 
   /**
    * Returns the panel `<div>` in which the `DirectionsResult` is rendered.
    * @type Node
-   * @public
+   * @public 
    */
   getPanel() {
-    return this.state[DIRECTIONS_RENDERER].getPanel()
+    return this.state[DIRECTIONS_RENDERER].getPanel();
   }
 
   /**
    * Returns the current (zero-based) route index in use by this `DirectionsRenderer` object.
    * @type number
-   * @public
+   * @public 
    */
   getRouteIndex() {
-    return this.state[DIRECTIONS_RENDERER].getRouteIndex()
+    return this.state[DIRECTIONS_RENDERER].getRouteIndex();
   }
 }
 
 export default DirectionsRenderer
 
 const eventMap = {
-  onDirectionsChanged: "directions_changed",
+  onDirectionsChanged: "directions_changed"
 }
 
 const updaterMap = {
   directions(instance, directions) {
-    instance.setDirections(directions)
+    instance.setDirections(directions);
   },
 
   options(instance, options) {
-    instance.setOptions(options)
+    instance.setOptions(options);
   },
 
   panel(instance, panel) {
-    instance.setPanel(panel)
+    instance.setPanel(panel);
   },
 
   routeIndex(instance, routeIndex) {
-    instance.setRouteIndex(routeIndex)
-  },
+    instance.setRouteIndex(routeIndex);
+  }
 }

@@ -5,7 +5,7 @@
  * -----------------------------------------------------------------------------
  */
 /* global google */
-import invariant from "invariant"
+import invariant from "invariant";
 import canUseDOM from "can-use-dom"
 import React from "react"
 import ReactDOM from "react-dom"
@@ -80,7 +80,7 @@ export class InfoWindow extends React.PureComponent {
     /**
      * function
      */
-    onZindexChanged: PropTypes.func,
+    onZindexChanged: PropTypes.func
   }
 
   static contextTypes = {
@@ -118,8 +118,7 @@ export class InfoWindow extends React.PureComponent {
       return
     }
     const content = document.createElement(`div`)
-    ReactDOM.unstable_renderSubtreeIntoContainer(
-      this,
+    ReactDOM.createPortal(
       React.Children.only(this.props.children),
       content
     )
@@ -139,8 +138,7 @@ export class InfoWindow extends React.PureComponent {
       return
     }
     if (this.props.children !== prevProps.children) {
-      ReactDOM.unstable_renderSubtreeIntoContainer(
-        this,
+      ReactDOM.createPortal(
         React.Children.only(this.props.children),
         this.state[INFO_WINDOW].getContent()
       )
@@ -169,21 +167,21 @@ export class InfoWindow extends React.PureComponent {
   }
 
   /**
-   *
+   * 
    * @type LatLng
-   * @public
+   * @public 
    */
   getPosition() {
-    return this.state[INFO_WINDOW].getPosition()
+    return this.state[INFO_WINDOW].getPosition();
   }
 
   /**
-   *
+   * 
    * @type number
-   * @public
+   * @public 
    */
   getZIndex() {
-    return this.state[INFO_WINDOW].getZIndex()
+    return this.state[INFO_WINDOW].getZIndex();
   }
 }
 
@@ -207,19 +205,19 @@ const eventMap = {
   onDomReady: "domready",
   onContentChanged: "content_changed",
   onPositionChanged: "position_changed",
-  onZindexChanged: "zindex_changed",
+  onZindexChanged: "zindex_changed"
 }
 
 const updaterMap = {
   options(instance, options) {
-    instance.setOptions(options)
+    instance.setOptions(options);
   },
 
   position(instance, position) {
-    instance.setPosition(position)
+    instance.setPosition(position);
   },
 
   zIndex(instance, zIndex) {
-    instance.setZIndex(zIndex)
-  },
+    instance.setZIndex(zIndex);
+  }
 }

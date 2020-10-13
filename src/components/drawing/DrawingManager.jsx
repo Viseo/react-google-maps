@@ -5,7 +5,7 @@
  * -----------------------------------------------------------------------------
  */
 /* global google */
-import invariant from "invariant"
+import invariant from "invariant";
 import React from "react"
 import PropTypes from "prop-types"
 
@@ -26,7 +26,7 @@ import { MAP, DRAWING_MANAGER } from "../../constants"
 export class DrawingManager extends React.PureComponent {
   static propTypes = {
     /**
-     * @type OverlayType
+     * @type OverlayTypeoptional
      */
     defaultDrawingMode: PropTypes.any,
 
@@ -36,7 +36,7 @@ export class DrawingManager extends React.PureComponent {
     defaultOptions: PropTypes.any,
 
     /**
-     * @type OverlayType
+     * @type OverlayTypeoptional
      */
     drawingMode: PropTypes.any,
 
@@ -73,7 +73,7 @@ export class DrawingManager extends React.PureComponent {
     /**
      * function
      */
-    onRectangleComplete: PropTypes.func,
+    onRectangleComplete: PropTypes.func
   }
 
   static contextTypes = {
@@ -125,11 +125,11 @@ export class DrawingManager extends React.PureComponent {
 
   /**
    * Returns the `DrawingManager`'s drawing mode.
-   * @type OverlayType
-   * @public
+   * @type OverlayType optional
+   * @public 
    */
   getDrawingMode() {
-    return this.state[DRAWING_MANAGER].getDrawingMode()
+    return this.state[DRAWING_MANAGER].getDrawingMode();
   }
 }
 
@@ -141,15 +141,15 @@ const eventMap = {
   onOverlayComplete: "overlaycomplete",
   onPolygonComplete: "polygoncomplete",
   onPolylineComplete: "polylinecomplete",
-  onRectangleComplete: "rectanglecomplete",
+  onRectangleComplete: "rectanglecomplete"
 }
 
 const updaterMap = {
   drawingMode(instance, drawingMode) {
-    instance.setDrawingMode(drawingMode)
+    instance.setDrawingMode(drawingMode);
   },
 
   options(instance, options) {
-    instance.setOptions(options)
-  },
+    instance.setOptions(options);
+  }
 }

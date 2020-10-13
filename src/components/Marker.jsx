@@ -5,7 +5,7 @@
  * -----------------------------------------------------------------------------
  */
 /* global google */
-import React from "react"
+import React from "react";
 import PropTypes from "prop-types"
 
 import {
@@ -36,7 +36,7 @@ export class Marker extends React.PureComponent {
     customData: PropTypes.any,
 
     /**
-     * @type Animation
+     * @type Animationoptional
      */
     defaultAnimation: PropTypes.any,
 
@@ -51,9 +51,9 @@ export class Marker extends React.PureComponent {
     defaultCursor: PropTypes.string,
 
     /**
-     * @type boolean
+     * @type booleanoptional
      */
-    defaultDraggable: PropTypes.bool,
+    defaultDraggable: PropTypes.any,
 
     /**
      * @type string|Icon|Symbol
@@ -76,7 +76,7 @@ export class Marker extends React.PureComponent {
     defaultOptions: PropTypes.any,
 
     /**
-     * @type LatLng|LatLngLiteral
+     * @type LatLng|LatLngLiteraloptional
      */
     defaultPosition: PropTypes.any,
 
@@ -101,7 +101,7 @@ export class Marker extends React.PureComponent {
     defaultZIndex: PropTypes.number,
 
     /**
-     * @type Animation
+     * @type Animationoptional
      */
     animation: PropTypes.any,
 
@@ -116,9 +116,9 @@ export class Marker extends React.PureComponent {
     cursor: PropTypes.string,
 
     /**
-     * @type boolean
+     * @type booleanoptional
      */
-    draggable: PropTypes.bool,
+    draggable: PropTypes.any,
 
     /**
      * @type string|Icon|Symbol
@@ -141,7 +141,7 @@ export class Marker extends React.PureComponent {
     options: PropTypes.any,
 
     /**
-     * @type LatLng|LatLngLiteral
+     * @type LatLng|LatLngLiteraloptional
      */
     position: PropTypes.any,
 
@@ -268,7 +268,7 @@ export class Marker extends React.PureComponent {
     /**
      * function
      */
-    onZindexChanged: PropTypes.func,
+    onZindexChanged: PropTypes.func
   }
 
   static contextTypes = {
@@ -341,111 +341,111 @@ export class Marker extends React.PureComponent {
   }
 
   /**
-   *
-   * @type Animation
-   * @public
+   * 
+   * @type Animation optional
+   * @public 
    */
   getAnimation() {
-    return this.state[MARKER].getAnimation()
+    return this.state[MARKER].getAnimation();
   }
 
   /**
-   *
+   * 
    * @type boolean
-   * @public
+   * @public 
    */
   getClickable() {
-    return this.state[MARKER].getClickable()
+    return this.state[MARKER].getClickable();
   }
 
   /**
-   *
+   * 
    * @type string
-   * @public
+   * @public 
    */
   getCursor() {
-    return this.state[MARKER].getCursor()
+    return this.state[MARKER].getCursor();
   }
 
   /**
-   *
+   * 
    * @type boolean
-   * @public
+   * @public 
    */
   getDraggable() {
-    return this.state[MARKER].getDraggable()
+    return this.state[MARKER].getDraggable();
   }
 
   /**
-   *
+   * 
    * @type string|Icon|Symbol
-   * @public
+   * @public 
    */
   getIcon() {
-    return this.state[MARKER].getIcon()
+    return this.state[MARKER].getIcon();
   }
 
   /**
-   *
+   * 
    * @type MarkerLabel
-   * @public
+   * @public 
    */
   getLabel() {
-    return this.state[MARKER].getLabel()
+    return this.state[MARKER].getLabel();
   }
 
   /**
-   *
+   * 
    * @type number
-   * @public
+   * @public 
    */
   getOpacity() {
-    return this.state[MARKER].getOpacity()
+    return this.state[MARKER].getOpacity();
   }
 
   /**
-   *
-   * @type LatLng
-   * @public
+   * 
+   * @type LatLng optional
+   * @public 
    */
   getPosition() {
-    return this.state[MARKER].getPosition()
+    return this.state[MARKER].getPosition();
   }
 
   /**
-   *
+   * 
    * @type MarkerShape
-   * @public
+   * @public 
    */
   getShape() {
-    return this.state[MARKER].getShape()
+    return this.state[MARKER].getShape();
   }
 
   /**
-   *
+   * 
    * @type string
-   * @public
+   * @public 
    */
   getTitle() {
-    return this.state[MARKER].getTitle()
+    return this.state[MARKER].getTitle();
   }
 
   /**
-   *
+   * 
    * @type boolean
-   * @public
+   * @public 
    */
   getVisible() {
-    return this.state[MARKER].getVisible()
+    return this.state[MARKER].getVisible();
   }
 
   /**
-   *
+   * 
    * @type number
-   * @public
+   * @public 
    */
   getZIndex() {
-    return this.state[MARKER].getZIndex()
+    return this.state[MARKER].getZIndex();
   }
 }
 
@@ -472,59 +472,59 @@ const eventMap = {
   onShapeChanged: "shape_changed",
   onTitleChanged: "title_changed",
   onVisibleChanged: "visible_changed",
-  onZindexChanged: "zindex_changed",
+  onZindexChanged: "zindex_changed"
 }
 
 const updaterMap = {
   animation(instance, animation) {
-    instance.setAnimation(animation)
+    instance.setAnimation(animation);
   },
 
   clickable(instance, clickable) {
-    instance.setClickable(clickable)
+    instance.setClickable(clickable);
   },
 
   cursor(instance, cursor) {
-    instance.setCursor(cursor)
+    instance.setCursor(cursor);
   },
 
   draggable(instance, draggable) {
-    instance.setDraggable(draggable)
+    instance.setDraggable(draggable);
   },
 
   icon(instance, icon) {
-    instance.setIcon(icon)
+    instance.setIcon(icon);
   },
 
   label(instance, label) {
-    instance.setLabel(label)
+    instance.setLabel(label);
   },
 
   opacity(instance, opacity) {
-    instance.setOpacity(opacity)
+    instance.setOpacity(opacity);
   },
 
   options(instance, options) {
-    instance.setOptions(options)
+    instance.setOptions(options);
   },
 
   position(instance, position) {
-    instance.setPosition(position)
+    instance.setPosition(position);
   },
 
   shape(instance, shape) {
-    instance.setShape(shape)
+    instance.setShape(shape);
   },
 
   title(instance, title) {
-    instance.setTitle(title)
+    instance.setTitle(title);
   },
 
   visible(instance, visible) {
-    instance.setVisible(visible)
+    instance.setVisible(visible);
   },
 
   zIndex(instance, zIndex) {
-    instance.setZIndex(zIndex)
-  },
+    instance.setZIndex(zIndex);
+  }
 }

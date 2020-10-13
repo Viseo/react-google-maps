@@ -5,7 +5,7 @@
  * -----------------------------------------------------------------------------
  */
 /* global google */
-import React from "react"
+import React from "react";
 import PropTypes from "prop-types"
 
 import {
@@ -67,7 +67,7 @@ export class KmlLayer extends React.PureComponent {
     /**
      * function
      */
-    onStatusChanged: PropTypes.func,
+    onStatusChanged: PropTypes.func
   }
 
   static contextTypes = {
@@ -116,46 +116,46 @@ export class KmlLayer extends React.PureComponent {
   /**
    * Get the default viewport for the layer being displayed.
    * @type LatLngBounds
-   * @public
+   * @public 
    */
   getDefaultViewport() {
-    return this.state[KML_LAYER].getDefaultViewport()
+    return this.state[KML_LAYER].getDefaultViewport();
   }
 
   /**
    * Get the metadata associated with this layer, as specified in the layer markup.
    * @type KmlLayerMetadata
-   * @public
+   * @public 
    */
   getMetadata() {
-    return this.state[KML_LAYER].getMetadata()
+    return this.state[KML_LAYER].getMetadata();
   }
 
   /**
    * Get the status of the layer, set once the requested document has loaded.
    * @type KmlLayerStatus
-   * @public
+   * @public 
    */
   getStatus() {
-    return this.state[KML_LAYER].getStatus()
+    return this.state[KML_LAYER].getStatus();
   }
 
   /**
    * Gets the URL of the KML file being displayed.
    * @type string
-   * @public
+   * @public 
    */
   getUrl() {
-    return this.state[KML_LAYER].getUrl()
+    return this.state[KML_LAYER].getUrl();
   }
 
   /**
    * Gets the z-index of the KML Layer.
    * @type number
-   * @public
+   * @public 
    */
   getZIndex() {
-    return this.state[KML_LAYER].getZIndex()
+    return this.state[KML_LAYER].getZIndex();
   }
 }
 
@@ -164,19 +164,19 @@ export default KmlLayer
 const eventMap = {
   onDefaultViewportChanged: "defaultviewport_changed",
   onClick: "click",
-  onStatusChanged: "status_changed",
+  onStatusChanged: "status_changed"
 }
 
 const updaterMap = {
   options(instance, options) {
-    instance.setOptions(options)
+    instance.setOptions(options);
   },
 
   url(instance, url) {
-    instance.setUrl(url)
+    instance.setUrl(url);
   },
 
   zIndex(instance, zIndex) {
-    instance.setZIndex(zIndex)
-  },
+    instance.setZIndex(zIndex);
+  }
 }

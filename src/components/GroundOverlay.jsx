@@ -5,7 +5,7 @@
  * -----------------------------------------------------------------------------
  */
 /* global google */
-import warning from "warning"
+import warning from "warning";
 import React from "react"
 import PropTypes from "prop-types"
 
@@ -65,7 +65,7 @@ export class GroundOverlay extends React.PureComponent {
     /**
      * function
      */
-    onClick: PropTypes.func,
+    onClick: PropTypes.func
   }
 
   static contextTypes = {
@@ -132,28 +132,28 @@ For GroundOveray, url and bounds are passed in to constructor and are immutable
   /**
    * Gets the `LatLngBounds` of this overlay.
    * @type LatLngBounds
-   * @public
+   * @public 
    */
   getBounds() {
-    return this.state[GROUND_LAYER].getBounds()
+    return this.state[GROUND_LAYER].getBounds();
   }
 
   /**
    * Returns the opacity of this ground overlay.
    * @type number
-   * @public
+   * @public 
    */
   getOpacity() {
-    return this.state[GROUND_LAYER].getOpacity()
+    return this.state[GROUND_LAYER].getOpacity();
   }
 
   /**
    * Gets the url of the projected image.
    * @type string
-   * @public
+   * @public 
    */
   getUrl() {
-    return this.state[GROUND_LAYER].getUrl()
+    return this.state[GROUND_LAYER].getUrl();
   }
 }
 
@@ -161,11 +161,11 @@ export default GroundOverlay
 
 const eventMap = {
   onDblClick: "dblclick",
-  onClick: "click",
+  onClick: "click"
 }
 
 const updaterMap = {
   opacity(instance, opacity) {
-    instance.setOpacity(opacity)
-  },
+    instance.setOpacity(opacity);
+  }
 }

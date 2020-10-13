@@ -5,7 +5,7 @@
  * -----------------------------------------------------------------------------
  */
 /* global google */
-import React from "react"
+import React from "react";
 import PropTypes from "prop-types"
 import makeMarkerWithLabel from "markerwithlabel"
 import ReactDOM from "react-dom"
@@ -64,7 +64,7 @@ export class MarkerWithLabel extends React.PureComponent {
     noRedraw: PropTypes.bool,
 
     /**
-     * @type Animation
+     * @type Animationoptional
      */
     defaultAnimation: PropTypes.any,
 
@@ -79,9 +79,9 @@ export class MarkerWithLabel extends React.PureComponent {
     defaultCursor: PropTypes.string,
 
     /**
-     * @type boolean
+     * @type booleanoptional
      */
-    defaultDraggable: PropTypes.bool,
+    defaultDraggable: PropTypes.any,
 
     /**
      * @type string|Icon|Symbol
@@ -104,7 +104,7 @@ export class MarkerWithLabel extends React.PureComponent {
     defaultOptions: PropTypes.any,
 
     /**
-     * @type LatLng|LatLngLiteral
+     * @type LatLng|LatLngLiteraloptional
      */
     defaultPosition: PropTypes.any,
 
@@ -129,7 +129,7 @@ export class MarkerWithLabel extends React.PureComponent {
     defaultZIndex: PropTypes.number,
 
     /**
-     * @type Animation
+     * @type Animationoptional
      */
     animation: PropTypes.any,
 
@@ -144,9 +144,9 @@ export class MarkerWithLabel extends React.PureComponent {
     cursor: PropTypes.string,
 
     /**
-     * @type boolean
+     * @type booleanoptional
      */
-    draggable: PropTypes.bool,
+    draggable: PropTypes.any,
 
     /**
      * @type string|Icon|Symbol
@@ -169,7 +169,7 @@ export class MarkerWithLabel extends React.PureComponent {
     options: PropTypes.any,
 
     /**
-     * @type LatLng|LatLngLiteral
+     * @type LatLng|LatLngLiteraloptional
      */
     position: PropTypes.any,
 
@@ -296,7 +296,7 @@ export class MarkerWithLabel extends React.PureComponent {
     /**
      * function
      */
-    onZindexChanged: PropTypes.func,
+    onZindexChanged: PropTypes.func
   }
 
   static defaultProps = {
@@ -380,111 +380,111 @@ export class MarkerWithLabel extends React.PureComponent {
   }
 
   /**
-   *
-   * @type Animation
-   * @public
+   * 
+   * @type Animation optional
+   * @public 
    */
   getAnimation() {
-    return this.state[MARKER_WITH_LABEL].getAnimation()
+    return this.state[MARKER_WITH_LABEL].getAnimation();
   }
 
   /**
-   *
+   * 
    * @type boolean
-   * @public
+   * @public 
    */
   getClickable() {
-    return this.state[MARKER_WITH_LABEL].getClickable()
+    return this.state[MARKER_WITH_LABEL].getClickable();
   }
 
   /**
-   *
+   * 
    * @type string
-   * @public
+   * @public 
    */
   getCursor() {
-    return this.state[MARKER_WITH_LABEL].getCursor()
+    return this.state[MARKER_WITH_LABEL].getCursor();
   }
 
   /**
-   *
+   * 
    * @type boolean
-   * @public
+   * @public 
    */
   getDraggable() {
-    return this.state[MARKER_WITH_LABEL].getDraggable()
+    return this.state[MARKER_WITH_LABEL].getDraggable();
   }
 
   /**
-   *
+   * 
    * @type string|Icon|Symbol
-   * @public
+   * @public 
    */
   getIcon() {
-    return this.state[MARKER_WITH_LABEL].getIcon()
+    return this.state[MARKER_WITH_LABEL].getIcon();
   }
 
   /**
-   *
+   * 
    * @type MarkerLabel
-   * @public
+   * @public 
    */
   getLabel() {
-    return this.state[MARKER_WITH_LABEL].getLabel()
+    return this.state[MARKER_WITH_LABEL].getLabel();
   }
 
   /**
-   *
+   * 
    * @type number
-   * @public
+   * @public 
    */
   getOpacity() {
-    return this.state[MARKER_WITH_LABEL].getOpacity()
+    return this.state[MARKER_WITH_LABEL].getOpacity();
   }
 
   /**
-   *
-   * @type LatLng
-   * @public
+   * 
+   * @type LatLng optional
+   * @public 
    */
   getPosition() {
-    return this.state[MARKER_WITH_LABEL].getPosition()
+    return this.state[MARKER_WITH_LABEL].getPosition();
   }
 
   /**
-   *
+   * 
    * @type MarkerShape
-   * @public
+   * @public 
    */
   getShape() {
-    return this.state[MARKER_WITH_LABEL].getShape()
+    return this.state[MARKER_WITH_LABEL].getShape();
   }
 
   /**
-   *
+   * 
    * @type string
-   * @public
+   * @public 
    */
   getTitle() {
-    return this.state[MARKER_WITH_LABEL].getTitle()
+    return this.state[MARKER_WITH_LABEL].getTitle();
   }
 
   /**
-   *
+   * 
    * @type boolean
-   * @public
+   * @public 
    */
   getVisible() {
-    return this.state[MARKER_WITH_LABEL].getVisible()
+    return this.state[MARKER_WITH_LABEL].getVisible();
   }
 
   /**
-   *
+   * 
    * @type number
-   * @public
+   * @public 
    */
   getZIndex() {
-    return this.state[MARKER_WITH_LABEL].getZIndex()
+    return this.state[MARKER_WITH_LABEL].getZIndex();
   }
 }
 
@@ -511,7 +511,7 @@ const eventMap = {
   onShapeChanged: "shape_changed",
   onTitleChanged: "title_changed",
   onVisibleChanged: "visible_changed",
-  onZindexChanged: "zindex_changed",
+  onZindexChanged: "zindex_changed"
 }
 
 const updaterMap = {
@@ -548,54 +548,54 @@ const updaterMap = {
   },
 
   animation(instance, animation) {
-    instance.setAnimation(animation)
+    instance.setAnimation(animation);
   },
 
   clickable(instance, clickable) {
-    instance.setClickable(clickable)
+    instance.setClickable(clickable);
   },
 
   cursor(instance, cursor) {
-    instance.setCursor(cursor)
+    instance.setCursor(cursor);
   },
 
   draggable(instance, draggable) {
-    instance.setDraggable(draggable)
+    instance.setDraggable(draggable);
   },
 
   icon(instance, icon) {
-    instance.setIcon(icon)
+    instance.setIcon(icon);
   },
 
   label(instance, label) {
-    instance.setLabel(label)
+    instance.setLabel(label);
   },
 
   opacity(instance, opacity) {
-    instance.setOpacity(opacity)
+    instance.setOpacity(opacity);
   },
 
   options(instance, options) {
-    instance.setOptions(options)
+    instance.setOptions(options);
   },
 
   position(instance, position) {
-    instance.setPosition(position)
+    instance.setPosition(position);
   },
 
   shape(instance, shape) {
-    instance.setShape(shape)
+    instance.setShape(shape);
   },
 
   title(instance, title) {
-    instance.setTitle(title)
+    instance.setTitle(title);
   },
 
   visible(instance, visible) {
-    instance.setVisible(visible)
+    instance.setVisible(visible);
   },
 
   zIndex(instance, zIndex) {
-    instance.setZIndex(zIndex)
-  },
+    instance.setZIndex(zIndex);
+  }
 }

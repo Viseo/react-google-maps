@@ -5,7 +5,7 @@
  * -----------------------------------------------------------------------------
  */
 /* global google */
-import React from "react"
+import React from "react";
 import PropTypes from "prop-types"
 
 import {
@@ -137,7 +137,7 @@ export class Polygon extends React.PureComponent {
     /**
      * function
      */
-    onDrag: PropTypes.func,
+    onDrag: PropTypes.func
   }
 
   static contextTypes = {
@@ -186,46 +186,46 @@ export class Polygon extends React.PureComponent {
   /**
    * Returns whether this shape can be dragged by the user.
    * @type boolean
-   * @public
+   * @public 
    */
   getDraggable() {
-    return this.state[POLYGON].getDraggable()
+    return this.state[POLYGON].getDraggable();
   }
 
   /**
    * Returns whether this shape can be edited by the user.
    * @type boolean
-   * @public
+   * @public 
    */
   getEditable() {
-    return this.state[POLYGON].getEditable()
+    return this.state[POLYGON].getEditable();
   }
 
   /**
    * Retrieves the first path.
    * @type MVCArray<LatLng>
-   * @public
+   * @public 
    */
   getPath() {
-    return this.state[POLYGON].getPath()
+    return this.state[POLYGON].getPath();
   }
 
   /**
    * Retrieves the paths for this polygon.
    * @type MVCArray<MVCArray<LatLng>>
-   * @public
+   * @public 
    */
   getPaths() {
-    return this.state[POLYGON].getPaths()
+    return this.state[POLYGON].getPaths();
   }
 
   /**
    * Returns whether this poly is visible on the map.
    * @type boolean
-   * @public
+   * @public 
    */
   getVisible() {
-    return this.state[POLYGON].getVisible()
+    return this.state[POLYGON].getVisible();
   }
 }
 
@@ -242,31 +242,31 @@ const eventMap = {
   onMouseUp: "mouseup",
   onRightClick: "rightclick",
   onClick: "click",
-  onDrag: "drag",
+  onDrag: "drag"
 }
 
 const updaterMap = {
   draggable(instance, draggable) {
-    instance.setDraggable(draggable)
+    instance.setDraggable(draggable);
   },
 
   editable(instance, editable) {
-    instance.setEditable(editable)
+    instance.setEditable(editable);
   },
 
   options(instance, options) {
-    instance.setOptions(options)
+    instance.setOptions(options);
   },
 
   path(instance, path) {
-    instance.setPath(path)
+    instance.setPath(path);
   },
 
   paths(instance, paths) {
-    instance.setPaths(paths)
+    instance.setPaths(paths);
   },
 
   visible(instance, visible) {
-    instance.setVisible(visible)
-  },
+    instance.setVisible(visible);
+  }
 }

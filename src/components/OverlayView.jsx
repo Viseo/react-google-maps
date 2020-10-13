@@ -5,7 +5,7 @@
  * -----------------------------------------------------------------------------
  */
 /* global google */
-import _ from "lodash"
+import _ from "lodash";
 import invariant from "invariant"
 import React from "react"
 import ReactDOM from "react-dom"
@@ -57,7 +57,7 @@ export class OverlayView extends React.PureComponent {
     /**
      * @see https://developers.google.com/maps/documentation/javascript/3.exp/reference#OverlayView
      */
-    getPixelPositionOffset: PropTypes.func,
+    getPixelPositionOffset: PropTypes.func
   }
 
   static contextTypes = {
@@ -164,20 +164,20 @@ export class OverlayView extends React.PureComponent {
 
   /**
    * Returns the panes in which this OverlayView can be rendered. The panes are not initialized until `onAdd` is called by the API.
-   * @type MapPanes
-   * @public
+   * @type MapPanes optional
+   * @public 
    */
   getPanes() {
-    return this.state[OVERLAY_VIEW].getPanes()
+    return this.state[OVERLAY_VIEW].getPanes();
   }
 
   /**
    * Returns the `MapCanvasProjection` object associated with this `OverlayView`. The projection is not initialized until `onAdd` is called by the API.
    * @type MapCanvasProjection
-   * @public
+   * @public 
    */
   getProjection() {
-    return this.state[OVERLAY_VIEW].getProjection()
+    return this.state[OVERLAY_VIEW].getProjection();
   }
 }
 

@@ -5,7 +5,7 @@
  * -----------------------------------------------------------------------------
  */
 /* global google */
-import React from "react"
+import React from "react";
 import PropTypes from "prop-types"
 
 import {
@@ -127,7 +127,7 @@ export class Polyline extends React.PureComponent {
     /**
      * function
      */
-    onDrag: PropTypes.func,
+    onDrag: PropTypes.func
   }
 
   static contextTypes = {
@@ -176,37 +176,37 @@ export class Polyline extends React.PureComponent {
   /**
    * Returns whether this shape can be dragged by the user.
    * @type boolean
-   * @public
+   * @public 
    */
   getDraggable() {
-    return this.state[POLYLINE].getDraggable()
+    return this.state[POLYLINE].getDraggable();
   }
 
   /**
    * Returns whether this shape can be edited by the user.
    * @type boolean
-   * @public
+   * @public 
    */
   getEditable() {
-    return this.state[POLYLINE].getEditable()
+    return this.state[POLYLINE].getEditable();
   }
 
   /**
    * Retrieves the path.
    * @type MVCArray<LatLng>
-   * @public
+   * @public 
    */
   getPath() {
-    return this.state[POLYLINE].getPath()
+    return this.state[POLYLINE].getPath();
   }
 
   /**
    * Returns whether this poly is visible on the map.
    * @type boolean
-   * @public
+   * @public 
    */
   getVisible() {
-    return this.state[POLYLINE].getVisible()
+    return this.state[POLYLINE].getVisible();
   }
 }
 
@@ -223,27 +223,27 @@ const eventMap = {
   onMouseUp: "mouseup",
   onRightClick: "rightclick",
   onClick: "click",
-  onDrag: "drag",
+  onDrag: "drag"
 }
 
 const updaterMap = {
   draggable(instance, draggable) {
-    instance.setDraggable(draggable)
+    instance.setDraggable(draggable);
   },
 
   editable(instance, editable) {
-    instance.setEditable(editable)
+    instance.setEditable(editable);
   },
 
   options(instance, options) {
-    instance.setOptions(options)
+    instance.setOptions(options);
   },
 
   path(instance, path) {
-    instance.setPath(path)
+    instance.setPath(path);
   },
 
   visible(instance, visible) {
-    instance.setVisible(visible)
-  },
+    instance.setVisible(visible);
+  }
 }

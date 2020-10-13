@@ -5,7 +5,7 @@
  * -----------------------------------------------------------------------------
  */
 /* global google */
-import React from "react"
+import React from "react";
 import PropTypes from "prop-types"
 
 import {
@@ -32,7 +32,7 @@ export class TrafficLayer extends React.PureComponent {
     /**
      * @type TrafficLayerOptions
      */
-    options: PropTypes.any,
+    options: PropTypes.any
   }
 
   static contextTypes = {
@@ -85,6 +85,6 @@ const eventMap = {}
 
 const updaterMap = {
   options(instance, options) {
-    instance.setOptions(options)
-  },
+    instance.setOptions(options);
+  }
 }
