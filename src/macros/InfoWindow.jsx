@@ -70,8 +70,7 @@ export class InfoWindow extends React.PureComponent {
       return
     }
     const content = document.createElement(`div`)
-    ReactDOM.unstable_renderSubtreeIntoContainer(
-      this,
+    ReactDOM.createPortal(
       React.Children.only(this.props.children),
       content
     )
@@ -91,8 +90,7 @@ export class InfoWindow extends React.PureComponent {
       return
     }
     if (this.props.children !== prevProps.children) {
-      ReactDOM.unstable_renderSubtreeIntoContainer(
-        this,
+      ReactDOM.createPortal(
         React.Children.only(this.props.children),
         this.state[INFO_WINDOW].getContent()
       )
