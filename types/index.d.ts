@@ -1,4 +1,4 @@
-// TypeScript Version: 2.8
+// TypeScript Version: 3.9
 
 declare module 'react-google-maps' {
   export {
