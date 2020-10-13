@@ -19,10 +19,6 @@ declare module 'react-google-maps' {
     DirectionsRendererProps,
   } from 'react-google-maps/lib/components/DirectionsRenderer'
   export {
-    default as FusionTablesLayer,
-    FusionTablesLayerProps,
-  } from 'react-google-maps/lib/components/FusionTablesLayer'
-  export {
     default as GoogleMap,
     GoogleMapProps,
   } from 'react-google-maps/lib/components/GoogleMap'
@@ -255,20 +251,6 @@ declare module 'react-google-maps/lib/components/drawing/DrawingManager' {
   export default class DrawingManager extends Component<DrawingManagerProps> {
     getDrawingMode(): google.maps.drawing.OverlayType
   }
-}
-
-declare module 'react-google-maps/lib/components/FusionTablesLayer' {
-  import { Component } from 'react'
-
-  export interface FusionTablesLayerProps {
-    defaultOptions?: google.maps.FusionTablesLayerOptions
-    options?: google.maps.FusionTablesLayerOptions
-    onClick?(e: google.maps.FusionTablesMouseEvent): void
-  }
-
-  export default class FusionTablesLayer extends Component<
-    FusionTablesLayerProps
-  > {}
 }
 
 declare module 'react-google-maps/lib/components/GoogleMap' {

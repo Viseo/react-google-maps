@@ -13,7 +13,6 @@ describe("react-google-maps module (index.js)", () => {
     InfoWindow,
     OverlayView,
     DirectionsRenderer,
-    FusionTablesLayer,
     KmlLayer,
     TrafficLayer,
     BicyclingLayer,
@@ -40,7 +39,6 @@ describe("react-google-maps module (index.js)", () => {
     expect(InfoWindow).toBeDefined()
     expect(OverlayView).toBeDefined()
     expect(DirectionsRenderer).toBeDefined()
-    expect(FusionTablesLayer).toBeDefined()
     expect(KmlLayer).toBeDefined()
     expect(TrafficLayer).toBeDefined()
     expect(BicyclingLayer).toBeDefined()

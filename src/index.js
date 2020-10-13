@@ -22,8 +22,6 @@ export { default as GroundOverlay } from "./components/GroundOverlay"
 
 export { default as DirectionsRenderer } from "./components/DirectionsRenderer"
 
-export { default as FusionTablesLayer } from "./components/FusionTablesLayer"
-
 export { default as KmlLayer } from "./components/KmlLayer"
 
 export { default as TrafficLayer } from "./components/TrafficLayer"
